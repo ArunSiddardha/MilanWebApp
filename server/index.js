@@ -5,7 +5,7 @@ const app = express();
 const excelToJson = require('convert-excel-to-json');
  
 const data = excelToJson({
-    sourceFile: "back/Book.xlsx"
+    sourceFile: "Book.xlsx"
 });
 // const xlsx = require('xlsx');
 // const wb = xlsx.readFile("back/Book.xlsx");
