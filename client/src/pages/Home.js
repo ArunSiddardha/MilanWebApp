@@ -8,8 +8,8 @@ function Home() {
     const [key, setKey] = useState('culti');
   return (
     <div className="relative container">
-      <div className="w-75 overall-leader">
-        Leader Board
+      <div className="w-100 m-4 d-flex justify-content-center mx-auto overall-leader">
+        Overall Leader Board
       </div>
       <div className='relative w-50 mx-auto '>
     <Tabs

@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -27,6 +28,21 @@
     <title>React App</title>
   </head>
   <body>
+    <script>
+      !function(e,i,n,s)
+      {
+        var t="InfogramEmbeds",
+        d=e.getElementsByTagName("script")[0];
+        if(window[t]&&window[t].initialized)
+          window[t].process&&window[t].process();
+        else if(!e.getElementById(n))
+        {
+          var o=e.createElement("script");o.async=1,o.id=n,o.src="https://e.infogram.com/js/dist/embed-loader-min.js",
+          d.parentNode.insertBefore(o,d)
+        }
+      }
+      (document,0,"infogram-async");
+      </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--

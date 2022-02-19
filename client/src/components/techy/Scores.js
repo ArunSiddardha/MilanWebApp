@@ -1,47 +1,63 @@
-import React from 'react'
-import { Accordion, Table } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react';
+import { Accordion, Table } from 'react-bootstrap';
+
+import Axios from "axios";
 function Scores() {
-  return (
-    <div className='container'>
-    <Accordion defaultActiveKey="0">
-        <Accordion.Item eventKey="0">
-            <Accordion.Header></Accordion.Header>
+    var i=0;
+    const itemRows = [];
+    const [scores,setscores] = useState([])
+    const Heads = [
+        'Team', 'Points'
+    ]
+    for(var event in scores){
+        i+=1
+        var objs = scores[event];
+        const item =(<Accordion defaultActiveKey="0">
+        <Accordion.Item eventKey={i}>
+            <Accordion.Header>{event}</Accordion.Header>
             <Accordion.Body>
-                <Table responsive>
+                <Table responsive="md" striped bordered hover>
                     <thead>
                         <tr>
-
+                            {Heads.map((Head) =>
+                            (
+                                <th>{Head}</th>
+                            ))}
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
+                  
+                        <tbody >
+                        
+                        {objs.map((obj)=>(
+                            <tr>
+                                <td>{obj.Team}</td>
+                                <td>{obj.Points}</td>
+                            </tr>
+                        ))}
+                         
+                        </tbody>
+                
 
-                        </tr>
-                        <tr>
-
-                        </tr>
-                        <tr>
-
-                        </tr>
-                    </tbody>
                 </Table>
             </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="1">
-            <Accordion.Header></Accordion.Header>
-            <Accordion.Body>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                est laborum.
-            </Accordion.Body>
-        </Accordion.Item>
-    </Accordion>
-    </div>
-  )
+        </Accordion>
+        )
+        itemRows.push(item)
+   }
+       
+    useEffect(()=>{
+        Axios.get('http://localhost:3001/techy/data').then((response)=>{
+            setscores(response.data);
+        })
+        console.log(scores);
+    },[])
+   
+    return (
+        <div className='container relative'>
+          {itemRows}  
+        </div>
+    )
 }
 
 export default Scores

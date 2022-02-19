@@ -5,12 +5,16 @@ import Team from './pages/Team'
 import Home from './pages/Home'
 import Schedule from './pages/Schedule'
 import Sponsors from './pages/Sponsors'
+import Header from './components/common/Header'
+import Events from './pages/Events'
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/team" element={<Team/>}/>
+        <Route path="/events" element={<Events/>}/>
         <Route path="/sponsors" element={<Sponsors/>}/>
         <Route path="/Schedule" element={<Schedule/>}/>
       </Routes>

@@ -1,0 +1,28 @@
+.logo{
+    width: 15vw;
+ }
+ @media screen and (max-width:1199px) {
+    .logo{
+       width: 23vw;
+    }
+ }
+ @media screen and (max-width:767px) {
+    .logo{
+       width: 30vw;
+    }
+ }
+ .stylit{
+    width: 0;
+ }
+ @media screen and (min-width:1280px) {
+    .stylit{
+       min-width: 9%;
+    }
+ }
+ .hoverinbac:hover{
+    border-bottom: 2px solid #F5C470;
+    border-top-left-radius: 0.5px;
+    border-bottom-left-radius: 0.5px;
+    border-top-right-radius: 0.5px;
+    border-bottom-right-radius: 0.5px;
+ }
