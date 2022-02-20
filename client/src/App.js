@@ -1,12 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
-import Team from './pages/Team'
 import Home from './pages/Home'
 import Schedule from './pages/Schedule'
+import Events from './pages/Events'
 import Sponsors from './pages/Sponsors'
 import Header from './components/common/Header'
-import Events from './pages/Events'
+import Footer from './components/common/Footer'
+import Team from './pages/Team'
+
 function App() {
   return (
     <Router>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/sponsors" element={<Sponsors/>}/>
         <Route path="/schedule" element={<Schedule/>}/>
       </Routes>
+      <Footer />
     </Router>
   );
 }
