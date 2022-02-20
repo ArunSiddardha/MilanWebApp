@@ -47,7 +47,7 @@ function Scores() {
    }
        
     useEffect(()=>{
-        Axios.get('http://localhost:3001/techy/data').then((response)=>{
+        Axios.get('http://localhost:3001/data/techy').then((response)=>{
             setscores(response.data);
         })
         console.log(scores);

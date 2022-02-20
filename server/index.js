@@ -134,8 +134,7 @@ app.get('/data/techy',async (req,res)=>{
       console.log(dat);
     })
     console.log(dat);
-    setTimeout(()=>res.send(dat),1000)
+    setTimeout(()=>res.send(dat),2000)
     
-
 })
 app.listen(3001)
