@@ -12,7 +12,7 @@ function Home() {
         <div className='w-full mx-auto'>
         <div class="infogram-embed" data-id="6336eb78-9a40-48ee-8ae9-020972a531d8" data-type="interactive" data-title="Bar Chart"></div>
         </div>
-    <div className='relative w-50 mx-auto my-5 vh-100 '>
+    <div className='relative w-50 mx-auto my-5'>
     <Tabs
       id="controlled-tab-example"
       activeKey={key}
