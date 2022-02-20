@@ -1,18 +1,20 @@
 import React,{useState} from 'react'
 import { Accordion, Table, Tabs,Tab } from 'react-bootstrap'
-import Sports from '../components/Sports/Scores'
+import SportsB from '../components/Sports/ScoresB'
+import SportsG from '../components/Sports/ScoresG'
 import Culti from '../components/culti/Scores'
 import Techy from '../components/techy/Scores'
 
 function Home() {
     const [key, setKey] = useState('culti');
   return (
-    <div className="relative container vh-90">
+    <>
+    <div className="relative container vh-100">
         <h2>OVERALL LEADERBOARD</h2>
         <div className='w-full mx-auto'>
         <div class="infogram-embed" data-id="6336eb78-9a40-48ee-8ae9-020972a531d8" data-type="interactive" data-title="Bar Chart"></div>
         </div>
-    <div className='relative w-50 mx-auto my-5 vh-100 '>
+    <div className='relative w-75 mx-auto my-5 vh-100 '>
     <Tabs
       id="controlled-tab-example"
       activeKey={key}
@@ -31,13 +33,21 @@ function Home() {
      </div>
         <Techy />
       </Tab>
-      <Tab eventKey="Sports" title="Sports" tabClassName="profile-tabitem">
+      <Tab eventKey="SportsB" title="Sports Boys" tabClassName="profile-tabitem">
       <div class="infogram-embed" data-id="24969d67-560e-482d-9284-4e8400d58742" data-type="interactive" data-title="Copy: Techy"></div>
-        <Sports />
+        <SportsB />
+      </Tab>
+      <Tab eventKey="SportsG" title="Sports Girls" tabClassName="profile-tabitem">
+      <div class="infogram-embed" data-id="24969d67-560e-482d-9284-4e8400d58742" data-type="interactive" data-title="Copy: Techy"></div>
+        <SportsG />
       </Tab>
     </Tabs>
     </div>
     </div>
+    <div className='relative'>
+
+    </div>
+    </>
   );
 
 }

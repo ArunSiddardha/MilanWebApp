@@ -90,54 +90,631 @@ const auth = new google.auth.GoogleAuth({
 //     }
 //     console.log(formatted)
 // }
-const Culti = []
-const Techy = ['CP CONTEST','Sheet2']
-const SportsB =[]
-const SportsG = []
-app.get('/data/techy',async (req,res)=>{
-    const client = await auth.getClient();
-    var dat ={}
-    // Instance of Google Sheets API
-    const googleSheets = google.sheets({ version: "v4", auth: client });
+const Culti = ['FASHION SHOW','STAGE PLAY','EYE MASK & PAINTING','BUDGET MASTERPIECE','DIGITAL POSTER','SOLO SINGING','PAANCH LAFZOON KI KAHANI', 'MILLIHUNT', 'HOSTEL DECORATION','PICTIONARY','QUIZ','GROUP DANCE','SOLO DANCE','DUO/TRIOS','BATTLE OF BANDS','DUMB CHARDES','LIFE AT IITH','SCRABBLE'];
+const Techy = ['CP CONTEST','CAPTURE THE FLAG','LAMBDA HACKATHON','MINI ROBOWARS','AERO QUIZ','EXPLORING SPACE','PATHFINDER','SOLIDS BY TORQUE','GAME JAM'];
+const SportsB =['ESPORTS','LAWN TENNIS','HOCKEY','TABLE TENNIS','VOLLEYBALL','CRICKET','BADMINTON','FOOTBALL','BASKETBALL','DODGEBALL','CARROM','CHESS','ATHLETICS','AQUATICS','WEIGTH LIFTING','SQUASH'];
+const SportsG = ['ESPORTS','LAWN TENNIS','HOCKEY','TABLE TENNIS','VOLLEYBALL','CRICKET','BADMINTON','FOOTBALL','BASKETBALL','DODGEBALL','CARROM','CHESS','ATHLETICS','AQUATICS','WEIGTH LIFTING','SQUASH'];
+// ,'26/02','27/02','28/02','01/03','02/03','03/03','04/03','05/03','06/03'
+const Dates = ['25/02','26/02','27/02','28/02','01/03','02/03','03/03','04/03','05/03','06/03']
+var datSB ={},
+datSG ={},
+datC={},
+datT={},
+schC={},
+schT={},
+schS={};
+async function datTf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1z7p7VPB2iKkZ1mzOSXzhyRr5Z9XeByd087dnePZ5KRg";
   
-    const spreadsheetId = "1tum5iFWq69SBB6iEwd-6S19jb3gOcvOTwF3-B4w8RYk";
-    
-    Techy.map(async (Tech)=>{
-      // Get metadata about spreadsheet
-          // const metaData = await googleSheets.spreadsheets.get({
-          //   auth,
-          //   spreadsheetId,
-          // });
-          // Read rows from spreadsheet
-          const getRows = await googleSheets.spreadsheets.values.get({
-              auth,
-              spreadsheetId,
-              range: Tech,
-            });
-            const arr = getRows.data.values
-            var keys = arr[0];
-          
-              //vacate keys from main array
-              var newArr = arr.slice(1, arr.length);
-              
-              var formatted = [],
-              data = newArr,
-              cols = keys,
-              l = cols.length;
-              for (var i=0; i<data.length; i++) {
-                      var d = data[i],
-                              o = {};
-                      for (var j=0; j<l; j++)
-                              o[cols[j]] = d[j];
-                      formatted.push(o);
-              }
-            dat[Tech] = formatted;
-            console.log(dat);
+  Techy.map(async (Tech)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Tech,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
             
-          })
-       
-     setTimeout(()=>res.send(dat),2000) 
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          datT[Tech] = formatted;
+          
+        })
+     
+}
+
+datTf()
+
+app.get('/data/techy',async (req,res)=>{
+    // const client = await auth.getClient();
+    // var datT ={}
+    // // Instance of Google Sheets API
+    // const googleSheets = google.sheets({ version: "v4", auth: client });
+  
+    // const sprveadsheetId = "1z7p7VPB2iKkZ1mzOSXzhyRr5Z9XeByd087dnePZ5KRg";
+    
+    // Techy.map(async (Tech)=>{
+    //   // Get metadata about spreadsheet
+    //       // const metaData = await googleSheets.spreadsheets.get({
+    //       //   auth,
+    //       //   spreadsheetId,
+    //       // });
+    //       // Read rows from spreadsheet
+    //       const getRows = await googleSheets.spreadsheets.values.get({
+    //           auth,
+    //           spreadsheetId,
+    //           range: Tech,
+    //         });
+    //         const arr = getRows.data.values
+    //         var keys = arr[0];
+          
+    //           //vacate keys from main array
+    //           var newArr = arr.slice(1, arr.length);
+              
+    //           var formatted = [],
+    //           data = newArr,
+    //           cols = keys,
+    //           l = cols.length;
+    //           for (var i=0; i<data.length; i++) {
+    //                   var d = data[i],
+    //                           o = {};
+    //                   for (var j=0; j<l; j++)
+    //                           o[cols[j]] = d[j];
+    //                   formatted.push(o);
+    //           }
+    //         datT[Tech] = formatted;
+    //         console.log(dat);
+            
+    //       })
+      console.log(datT) 
+     res.send(datT)
     
    
 })
+async function datCf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1JlzkeXE-cCC4_zVJ9I20X1kjmc2LJ6dOr18MwjNW3Zs";
+  
+  Culti.map(async (Tech)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Tech,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          datC[Tech] = formatted;
+          
+        })
+}
+datCf();
+app.get('/data/culti',async (req,res)=>{
+  // const client = await auth.getClient();
+  // var datC ={}
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1JlzkeXE-cCC4_zVJ9I20X1kjmc2LJ6dOr18MwjNW3Zs";
+  
+  // Culti.map(async (Tech)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Tech,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //         datC[Tech] = formatted;
+  //         console.log(dat);
+          
+  //       })
+     
+   res.send(datC)
+  
+ 
+})
+async function datSBf(){
+  const client = await auth.getClient();
+  
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1FbjUbFEEx1CtZvTjThD0wTDWI9ux8-7i-o8x49hhjlA";
+  
+  SportsB.map(async (Tech)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Tech,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          datSB[Tech] = formatted; 
+        })
+}
+datSBf()
+app.get('/data/sportsb',async (req,res)=>{
+  // const client = await auth.getClient();
+  // var datSB ={}
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1FbjUbFEEx1CtZvTjThD0wTDWI9ux8-7i-o8x49hhjlA";
+  
+  // SportsB.map(async (Tech)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Tech,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //         datSB[Tech] = formatted;
+  //         console.log(dat);
+          
+  //       }) 
+   res.send(datSB);
+})
+async function datSGf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1ymuHxXt9iVz62f4zL6we_aybbTwHlXqfP1Fllf4XScY";
+  
+  SportsG.map(async (Tech)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Tech,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          datSG[Tech] = formatted;
+        
+          
+        })
+}
+datSGf()
+app.get('/data/sportsg',async (req,res)=>{
+  // const client = await auth.getClient();
+  // var datSG ={}
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1ymuHxXt9iVz62f4zL6we_aybbTwHlXqfP1Fllf4XScY";
+  
+  // SportsG.map(async (Tech)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Tech,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //         datSG[Tech] = formatted;
+  //         console.log(dat);
+          
+  //       })
+     
+  res.send(datSG)
+  
+ 
+})
+async function schCf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1HVmIgCyHN1wkLCMaMM106HoS4n-Ie6EFd3pPr3xTRxM";
+  
+  Dates.map(async (Date)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Date,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+            schC[Date] = formatted;
+          
+        })
+}
+schCf()
+app.get('/schedule/culti',async (req,res)=>{
+  // const client = await auth.getClient();
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1HVmIgCyHN1wkLCMaMM106HoS4n-Ie6EFd3pPr3xTRxM";
+  
+  // Dates.map(async (Date)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Date,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //           schC[Date] = formatted;
+  //         console.log(dat);
+          
+  //       })
+     
+   setTimeout(()=>res.send(schC),2000) 
+  
+ 
+})
+async function schTf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1H-3swOdaEQncTiqDbnWI5lmJs1b3J0ZsqPGKJCkeKYU";
+  
+  Dates.map(async (Date)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Date,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          schT[Date] = formatted;
+          
+        })
+
+}
+schTf()
+app.get('/schedule/techy',async (req,res)=>{
+  // const client = await auth.getClient();
+  // var schT ={}
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1H-3swOdaEQncTiqDbnWI5lmJs1b3J0ZsqPGKJCkeKYU";
+  
+  // Dates.map(async (Date)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Date,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //         schT[Date] = formatted;
+  //         console.log(dat);
+          
+  //       })
+     
+  res.send(schT)
+  
+ 
+})
+async function schSf(){
+  const client = await auth.getClient();
+  // Instance of Google Sheets API
+  const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  const spreadsheetId = "1Qlcc5jznOsDQYI75__3Zx7LgKzThsd5Tf0j0KfVF6UU";
+  
+  Dates.map(async (Date)=>{
+    // Get metadata about spreadsheet
+        // const metaData = await googleSheets.spreadsheets.get({
+        //   auth,
+        //   spreadsheetId,
+        // });
+        // Read rows from spreadsheet
+        const getRows = await googleSheets.spreadsheets.values.get({
+            auth,
+            spreadsheetId,
+            range: Date,
+          });
+          const arr = getRows.data.values
+          var keys = arr[0];
+        
+            //vacate keys from main array
+            var newArr = arr.slice(1, arr.length);
+            
+            var formatted = [],
+            data = newArr,
+            cols = keys,
+            l = cols.length;
+            for (var i=0; i<data.length; i++) {
+                    var d = data[i],
+                            o = {};
+                    for (var j=0; j<l; j++)
+                            o[cols[j]] = d[j];
+                    formatted.push(o);
+            }
+          schS[Date] = formatted;
+  
+          
+        })
+     
+}
+
+schSf()
+app.get('/schedule/sports',async (req,res)=>{
+  // const client = await auth.getClient();
+  // var schS ={}
+  // // Instance of Google Sheets API
+  // const googleSheets = google.sheets({ version: "v4", auth: client });
+
+  // const spreadsheetId = "1Qlcc5jznOsDQYI75__3Zx7LgKzThsd5Tf0j0KfVF6UU";
+  
+  // Dates.map(async (Date)=>{
+  //   // Get metadata about spreadsheet
+  //       // const metaData = await googleSheets.spreadsheets.get({
+  //       //   auth,
+  //       //   spreadsheetId,
+  //       // });
+  //       // Read rows from spreadsheet
+  //       const getRows = await googleSheets.spreadsheets.values.get({
+  //           auth,
+  //           spreadsheetId,
+  //           range: Date,
+  //         });
+  //         const arr = getRows.data.values
+  //         var keys = arr[0];
+        
+  //           //vacate keys from main array
+  //           var newArr = arr.slice(1, arr.length);
+            
+  //           var formatted = [],
+  //           data = newArr,
+  //           cols = keys,
+  //           l = cols.length;
+  //           for (var i=0; i<data.length; i++) {
+  //                   var d = data[i],
+  //                           o = {};
+  //                   for (var j=0; j<l; j++)
+  //                           o[cols[j]] = d[j];
+  //                   formatted.push(o);
+  //           }
+  //        schS[Date] = formatted;
+  
+          
+  //       })
+     
+  res.send(schS);
+ 
+})
+
+
 app.listen(3001)

@@ -45,20 +45,27 @@ tr {
   margin : 0 auto;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-  color: orangered;
+  color: rgb(160, 36, 104);
+  padding: 1rem;
+  margin : 0 5px;
   background-color: #fff;
   border-color: none;
 }
-
+.nav-items {
+  margin: 3px;
+  border:none;
+}
 .nav-tabs {
-  border-bottom: none;
+  margin: 0 auto;
+  border: none;
 }
 
 .nav-tabs .nav-link:hover{
-  color: gray
+  color: rgb(102, 101, 101)
 }
 .profile-tabs {
   width: 60%;
+  padding:1rem;
   margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
@@ -68,19 +75,19 @@ tr {
 
 
 .profile-tabitem {
-  font-family: Source Sans Pro;
-  font-size: 22px;
-  font-weight: bold;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
   font-stretch: normal;
   font-style: normal;
   line-height: 0.77;
   letter-spacing: -0.6px;
+  padding: 10px;
   text-align: left;
-  color: #d9d9d9;
+  color: #ce3232;
 }
 
 .profile-tabitem:active {
-  font-family: Source Sans Pro;
+  font-family: 'Architects Daughter', cursive;
   font-size: 22px;
   font-weight: bold;
   font-stretch: normal;
@@ -88,5 +95,81 @@ tr {
   line-height: 0.77;
   letter-spacing: -0.6px;
   text-align: left;
-  color: #ff7255;
+  color: #ff2a00;
+  padding: 1rem;
+}
+
+@media(max-width: 768px)
+{
+    .row{
+        width: 100%;
+    }
+}
+.profile-card
+{
+    position: relative;
+    background-color: #ffffff;
+    width: 50%;
+    height: 100px;
+    min-width: 200px;
+    margin: 90px 0 150px 0;
+    transition: 0.4s ease-in-out;
+    border-radius: 100px;
+
+}
+
+.profile-content
+{
+    padding:15px;
+}
+.profile-image img{
+    position: relative;
+    border-radius: 100px;
+    min-width: 200px;
+    width:60%;
+    top: -80px;
+
+}
+
+.profile-image
+{
+    text-align: center;
+    top: -90px;
+}
+.cdetail{
+    padding: 5%;
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    margin-left:20px;
+    color:black;
+    margin-top: -150px;
+    font-family: 'Architects Daughter', cursive;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+} .profile-card:hover{
+    height: 150px;
+}
+.profile-card:hover .cdetail{
+    visibility: visible;
+    opacity: 1;
+    margin-top :-70px;
+}
+@media(max-width: 768px)
+{
+  .cdetail{
+    font-size: 1rem;
+  }
+  .profile-card{
+    margin: 50px auto 40px  ;
+
+  }
+  
+}
+@media(max-width: 523px){
+    .img{
+        width: 400px;
+    }
 }

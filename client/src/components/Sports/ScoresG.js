@@ -7,7 +7,7 @@ function Scores() {
     const itemRows = [];
     const [scores,setscores] = useState([])
     const Heads = [
-        'Team', 'Wins', 'Lost', 'Draw', 'Points'
+        'Team', 'Points'
     ]
     for(var event in scores){
         i+=1
@@ -31,9 +31,6 @@ function Scores() {
                         {objs.map((obj)=>(
                             <tr>
                                 <td>{obj.Team}</td>
-                                <td>{obj.Wins}</td>
-                                <td>{obj.Loses}</td>
-                                <td>{obj.Draw}</td>
                                 <td>{obj.Points}</td>
                             </tr>
                         ))}
@@ -50,10 +47,9 @@ function Scores() {
    }
        
     useEffect(()=>{
-        Axios.get('http://localhost:3001/data/sportsb').then((response)=>{
+        Axios.get('http://localhost:3001/data/sportsg').then((response)=>{
             setscores(response.data);
         })
-        console.log(scores);
     },[])
    
     return (
