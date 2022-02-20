@@ -1,8 +1,7 @@
 import React from 'react'
-import Logo from '../../images/milanfinal.png'
+import logo from '../../images/milan_logo.png'
 import styles from '../../css/Header.module.css'
-import {Link} from 'react-router-dom'
-import {Navbar,Nav,Container,NavDropdown} from 'react-bootstrap'
+import {Navbar,Nav,Container} from 'react-bootstrap'
 function Header() {
   const routes = [
     ["Team", "/team"],
@@ -10,33 +9,30 @@ function Header() {
     ["Sponsors", "/sponsors"],
     ["Schedule", "/schedule"],
   ];
-  return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-  <Container>
-  <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-      <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
 
+  return (
+    <Navbar collapseOnSelect expand="lg" className={styles.nav_color} variant="dark">
+      <Container fluid className={styles.padding}>
+      <Navbar.Brand href="/">
+        <img 
+          src={logo} 
+          width="60px" 
+          height="60px"
+          alt="logo"
+        />
+        <em className={styles.nav_brand}>Milan</em>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ms-auto">
+          <Nav.Link className={styles.nav_link} href="/schedule">Schedule</Nav.Link>
+          <Nav.Link className={styles.nav_link} href="/events">Events</Nav.Link>
+          <Nav.Link className={styles.nav_link} href="/sponsors">Sponsors</Nav.Link>
+          <Nav.Link className={styles.nav_link} href="/team">Team</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+      </Container>
+    </Navbar>
   )
 }
 
