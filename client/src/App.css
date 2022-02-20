@@ -40,7 +40,53 @@ tr {
   padding: 5px;
 }
 .infogram-embed{
-  width: 50%;
+  width: 70%;
   height : 50%;
   margin : 0 auto;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: orangered;
+  background-color: #fff;
+  border-color: none;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs .nav-link:hover{
+  color: gray
+}
+.profile-tabs {
+  width: 60%;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.profile-tabitem {
+  font-family: Source Sans Pro;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.77;
+  letter-spacing: -0.6px;
+  text-align: left;
+  color: #d9d9d9;
+}
+
+.profile-tabitem:active {
+  font-family: Source Sans Pro;
+  font-size: 22px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.77;
+  letter-spacing: -0.6px;
+  text-align: left;
+  color: #ff7255;
 }

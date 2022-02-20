@@ -91,7 +91,7 @@ const auth = new google.auth.GoogleAuth({
 //     console.log(formatted)
 // }
 const Culti = []
-const Techy = ['CP CONTEST',]
+const Techy = ['CP CONTEST','Sheet2']
 const SportsB =[]
 const SportsG = []
 app.get('/data/techy',async (req,res)=>{
@@ -101,40 +101,43 @@ app.get('/data/techy',async (req,res)=>{
     const googleSheets = google.sheets({ version: "v4", auth: client });
   
     const spreadsheetId = "1tum5iFWq69SBB6iEwd-6S19jb3gOcvOTwF3-B4w8RYk";
-   Techy.map(async (Tech)=>{
-// Get metadata about spreadsheet
-    // const metaData = await googleSheets.spreadsheets.get({
-    //   auth,
-    //   spreadsheetId,
-    // });
-    // Read rows from spreadsheet
-    const getRows = await googleSheets.spreadsheets.values.get({
-        auth,
-        spreadsheetId,
-        range: Tech,
-      });
-      const arr = getRows.data.values
-      var keys = arr[0];
     
-        //vacate keys from main array
-        var newArr = arr.slice(1, arr.length);
-        
-        var formatted = [],
-        data = newArr,
-        cols = keys,
-        l = cols.length;
-        for (var i=0; i<data.length; i++) {
-                var d = data[i],
-                        o = {};
-                for (var j=0; j<l; j++)
-                        o[cols[j]] = d[j];
-                formatted.push(o);
-        }
-      dat[Tech] = formatted;
-      console.log(dat);
-    })
-    console.log(dat);
-    setTimeout(()=>res.send(dat),2000)
+    Techy.map(async (Tech)=>{
+      // Get metadata about spreadsheet
+          // const metaData = await googleSheets.spreadsheets.get({
+          //   auth,
+          //   spreadsheetId,
+          // });
+          // Read rows from spreadsheet
+          const getRows = await googleSheets.spreadsheets.values.get({
+              auth,
+              spreadsheetId,
+              range: Tech,
+            });
+            const arr = getRows.data.values
+            var keys = arr[0];
+          
+              //vacate keys from main array
+              var newArr = arr.slice(1, arr.length);
+              
+              var formatted = [],
+              data = newArr,
+              cols = keys,
+              l = cols.length;
+              for (var i=0; i<data.length; i++) {
+                      var d = data[i],
+                              o = {};
+                      for (var j=0; j<l; j++)
+                              o[cols[j]] = d[j];
+                      formatted.push(o);
+              }
+            dat[Tech] = formatted;
+            console.log(dat);
+            
+          })
+       
+     setTimeout(()=>res.send(dat),2000) 
     
+   
 })
 app.listen(3001)
