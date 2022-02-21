@@ -6,7 +6,7 @@ import Techy from '../components/techy/Schedule'
 function Schedule() {
     const [key, setKey] = useState('culti');
     return (
-        <div className='relative w-75 mx-auto my-5 vh-100 '>
+        <div className='relative w-75 mx-auto my-5 '>
         <Tabs
           id="controlled-tab-example"
           activeKey={key}

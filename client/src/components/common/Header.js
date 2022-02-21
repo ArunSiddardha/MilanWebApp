@@ -16,8 +16,8 @@ function Header() {
       <Navbar.Brand href="/">
         <img 
           src={logo} 
-          width="60px" 
-          height="60px"
+          width="100px" 
+          height="100px"
           alt="logo"
         />
         <em className={styles.nav_brand}>Milan</em>

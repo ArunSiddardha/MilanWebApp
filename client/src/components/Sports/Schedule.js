@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { Accordion, Table } from 'react-bootstrap';
 import Axios from "axios";
+import Footer from "../common/Footer"
 function Schedule() {
     var i=0;
     const itemRows = [];
@@ -12,7 +13,8 @@ function Schedule() {
     for(var event in scores){
         const Date = Dates[i]
             var objs = scores[Date];
-           const item =(<Accordion defaultActiveKey="0">
+           const item =(
+        <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey={i}>
             <Accordion.Header>{Date}</Accordion.Header>
             <Accordion.Body>
@@ -54,7 +56,7 @@ function Schedule() {
 },[])
    
     return (
-        <div className='container relative'>
+        <div className='container h-auto'>
           {itemRows}  
         </div>
     )

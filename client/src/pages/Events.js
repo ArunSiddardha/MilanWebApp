@@ -3,13 +3,13 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const data = [
   {
-   image: require('../images/milanfinal.png'), 
+   image: require('../images/milanfina.png'), 
   },
   {
-    image:require('../images/milanfinal.png'), 
+    image:require('../images/milanfina.png'), 
    },
    {
-    image:require('../images/milanfinal.png'), 
+    image:require('../images/milanfina.png'), 
    } 
 ]
 
@@ -20,7 +20,7 @@ function Events() {
   };
 
   return (
-    <div className="w-50 mx-auto my-5"  >
+    <div className="w-50 mx-auto my-5 "  >
     <Carousel activeIndex={index} onSelect={handleSelect}>
        {data.map((slide, i) => {
         return (

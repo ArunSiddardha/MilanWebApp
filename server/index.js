@@ -277,8 +277,6 @@ app.get('/data/culti',async (req,res)=>{
   //       })
      
    res.send(datC)
-  
- 
 })
 async function datSBf(){
   const client = await auth.getClient();

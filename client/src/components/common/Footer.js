@@ -2,11 +2,11 @@ import React from 'react'
 import logo from '../../images/milan_logo.png'
 import styles from '../../css/Footer.module.css'
 import { Container } from 'react-bootstrap'
-import { SocialMediaIconsReact } from 'social-media-icons-react';
+// import { SocialMediaIconsReact } from 'social-media-icons-react';
 
 function Footer() {
   return (
-    <div className={styles.footer_style}>
+    <div className={`${styles.footer_style}`}>
       <Container className={styles.flex}>
         <div className={styles.center}>
           <img 
@@ -27,7 +27,7 @@ function Footer() {
         </div>
         <div className={styles.center}>
           <h5>Follow Us</h5>
-          <SocialMediaIconsReact 
+          {/* <SocialMediaIconsReact 
             borderColor="rgba(0,0,0,1)" 
             borderWidth="2" 
             borderStyle="solid" 
@@ -38,7 +38,7 @@ function Footer() {
             roundness="50%" 
             url="https://www.instagram.com/milan_thegc_iith/" 
             size="40" 
-          />
+          /> */}
         </div>
       </Container>
     </div>
