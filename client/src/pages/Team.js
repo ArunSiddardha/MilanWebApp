@@ -96,7 +96,7 @@ function Team() {
             <Img src={images["Adithya Ram_Events_pronites_Coordinator.jpg"]} alt="EP6" name="Adithya R"/>
             <Img alt="EP7" name="Arpit S" />
             <Img src={images["Anshul_events_pronites_coordinator.JPG"]} alt="EP8" name="Anshul G" />
-            <Img alt="EP9" name="Vaidesh K"/>
+            <Img src={images["VaideshKodi_Eventsandpronites_coord.jpg"]} alt="EP9" name="Vaidesh K"/>
             <Img src={images["Pritee__events _pronite coordinator_.jpg"]} alt="EP10" name="Pritee N" />
             <Img src={images["Yash Rajput_Event_Pronites_Coordinator.JPG"]} alt="EP11" name="Yash R" />
             <Img alt="EP12" name="Pavan B"/>
