@@ -21,9 +21,9 @@ function Footer() {
         <div>
           <strong>Location :</strong><br />
           Indian Institute of technology Hyderabad<br />
-          Near NH-65, Sangareddy, kandi, Telangana 502285<br /><br />
-          <strong>Phone: </strong>(91) 9633124037<br />
-          <strong>Mail Us at: </strong>milan.oc@gymkhana.iith.ac.in<br />
+          Near NH-65, Sangareddy, Kandi, Telangana 502285<br /><br />
+          <strong>Phone: </strong>(+91) 9633124037<br />
+          <strong>Email us at: </strong>milan.oc@gymkhana.iith.ac.in<br />
         </div>
         <div className={styles.center}>
           <h5>Follow Us</h5>

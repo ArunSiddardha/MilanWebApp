@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+.color{
+    color:#344326;
+}
+.texting{
+    font-size: 1.6rem;
+    color: #333333;
+    font-family: 'Lato', sans-serif;
+    margin:5rem;
+    width:75%;
+}
+@media screen and (max-width:769px) {
+    .texting{
+        font-size: 1rem;
+        width:90%;
+    }
+ }
+ .width{
+    width:50%;
+}
+@media screen and (max-width:769px) {
+    .width{
+       width: 90%;
+    }
+ }

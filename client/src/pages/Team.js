@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import Img from "../images/Image"
+import Img from "../components/Image"
 import styles from "../css/Team.module.css"
 
 function importAll(r) {
@@ -103,34 +103,35 @@ function Team() {
           </div>
         </div>
 
-       <div>
-         <h4 className={styles.headings}>Creatives</h4>
-         <div className={styles.flex_arrange}>
-           <Img src={images["Viren_Creatives_Coordinator.jpeg"]} alt="C1" name="Viren S" />
-           <Img src={images["TandleVardhan_Creatives_Coordinator.png"]} alt="C2" name="Tandle V" />
-           <Img src={images["Bharadwaja_creatives_coordinator.jpg"]} alt="C3" name="Bharadwaja R" />
-           <Img alt="C4" name="Arsalan S"/>
-         </div>
-       </div>
+        <div>
+          <h4 className={styles.headings}>Creatives</h4>
+          <div className={styles.flex_arrange}>
+            <Img src={images["Viren_Creatives_Coordinator.jpeg"]} alt="C1" name="Viren S" />
+            <Img src={images["TandleVardhan_Creatives_Coordinator.png"]} alt="C2" name="Tandle V" />
+            <Img src={images["Bharadwaja_creatives_coordinator.jpg"]} alt="C3" name="Bharadwaja R" />
+            <Img alt="C4" name="Arsalan S"/>
+          </div>
+        </div>
 
-       <div>
-         <h4 className={styles.headings}>Multimedia</h4>
-         <div className={styles.flex_arrange}>
-           <Img alt="M1" name="Arpita G" />
-           <Img src={images["Srilakshmi_multimedia_coordinator.jpg"]} alt="M2" name="Srilakshmi"/>
-         </div>
-       </div>
+        <div>
+          <h4 className={styles.headings}>Multimedia</h4>
+          <div className={styles.flex_arrange}>
+            <Img alt="M1" name="Arpita G" />
+            <Img src={images["Srilakshmi_multimedia_coordinator.jpg"]} alt="M2" name="Srilakshmi"/>
+          </div>
+        </div>
         
-       <div>          <h4 className={styles.headings}>Web Dev and Management</h4>
-         <div className={styles.flex_arrange}>
-           <Img alt="WM1" name="Vishnu VS" />
-           <Img src={images["Arun_Web_Coordinator.jpg"]} alt="WM2" name="Arun S" />
-           <Img src={images["Jyotshna_Hospi and Infra Coordinator.jpeg"]} alt="WM3" name="Jyotshna K" />
-           <Img src={images["TanmayGarg_Web_Coordinator.JPG"]} alt="WM4" name="Tanmay G"/>
-         </div>
-       </div>
-     </div>
-   </Container>
+        <div>
+          <h4 className={styles.headings}>Web Dev and Management</h4>
+          <div className={styles.flex_arrange}>
+            <Img alt="WM1" name="Vishnu VS" />
+            <Img src={images["Arun_Web_Coordinator.jpg"]} alt="WM2" name="Arun S" />
+            <Img src={images["Jyotshna_Hospi and Infra Coordinator.jpeg"]} alt="WM3" name="Jyotshna K" />
+            <Img src={images["TanmayGarg_Web_Coordinator.JPG"]} alt="WM4" name="Tanmay G"/>
+          </div>
+        </div>
+      </div>
+    </Container>
   )
 }
 

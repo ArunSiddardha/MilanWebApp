@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@font-face {
+   font-family: "Adam";
+   src: url("../fonts/adam-cg-pro.regular.otf");
+}
 .logo{
     width: 15vw;
  }
  .nav_color{
-    background-color: #DDDDDD;
-    margin-bottom: 20px;
+    background-color: #000000;
  }
  .padding{
     padding-left: 7% !important;
     padding-right: 7% !important;
  }
  .nav_link{
-    margin: 10px 20px;
-    color: #222831 !important;
+    margin: 10px 10px;
+    color: #DDDD !important;
     font-size: large;
     position: relative;
  }
  .nav_link::after {
-   background-color: #F05454;
+   background-color: #EAD87C;
    content: "";
    width: 0;
    height: 3px;
@@ -31,9 +34,13 @@
    width: 100%;
  }
  .nav_brand{
+   letter-spacing: 3px;
    font-size: xx-large;
-   margin: 10px 0 0 20px;
-   color: #222831;
+   color: #EAD87C;
+   display: inline;
+   margin: auto 0;
+   font-family: "Adam";
+   /* font-family: 'PT Serif', serif; */
  }
  
  @media screen and (max-width:1199px) {
@@ -46,6 +53,9 @@
        width: 30vw;
     }
  }
+ /* .fontstyle{
+    font-family: Adam.cgpro;
+ } */
  .stylit{
     width: 0;
  }
@@ -55,7 +65,7 @@
     }
  }
  .hoverinbac:hover{
-    border-bottom: 2px solid #F5C470;
+    border-bottom: 2px solid #EAD87C;
     border-top-left-radius: 0.5px;
     border-bottom-left-radius: 0.5px;
     border-top-right-radius: 0.5px;

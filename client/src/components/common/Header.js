@@ -12,15 +12,15 @@ function Header() {
 
   return (
     <Navbar collapseOnSelect expand="lg" className={styles.nav_color} variant="dark">
-      <Container fluid className={styles.padding}>
-      <Navbar.Brand href="/">
+      <Container fluid className={`${styles.padding} ${styles.fontstyle}`}>
+      <Navbar.Brand className='d-flex align-items-center'  href="/">
         <img 
           src={logo} 
           width="100px" 
           height="100px"
           alt="logo"
         />
-        <em className={styles.nav_brand}>Milan</em>
+        <p className={styles.nav_brand}>MILAN</p>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">

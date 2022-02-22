@@ -3,10 +3,11 @@ import { Accordion, Table, Tabs,Tab } from 'react-bootstrap'
 import Sports from '../components/Sports/Schedule'
 import Culti from '../components/culti/Schedule'
 import Techy from '../components/techy/Schedule'
+import styles from '../css/Events.module.css'
 function Schedule() {
     const [key, setKey] = useState('culti');
     return (
-        <div className='relative w-75 mx-auto my-5 '>
+        <div className={`relative mx-auto my-5 ${styles.width1}`}>
         <Tabs
           id="controlled-tab-example"
           activeKey={key}

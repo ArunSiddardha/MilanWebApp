@@ -1,0 +1,16 @@
+.width{
+    width:50%;
+}
+@media screen and (max-width:769px) {
+    .width{
+       width: 90%;
+    }
+ }
+ .width1{
+    width:75%;
+}
+@media screen and (max-width:769px) {
+    .width1{
+       width: 95%;
+    }
+ }
