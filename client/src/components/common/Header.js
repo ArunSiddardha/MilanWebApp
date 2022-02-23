@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../../images/milan_logo.png'
 import styles from '../../css/Header.module.css'
 import {Navbar,Nav,Container} from 'react-bootstrap'
+import {Link} from "react-router-dom"
 function Header() {
   const routes = [
     ["Team", "/team"],
@@ -25,10 +26,10 @@ function Header() {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ms-auto">
-          <Nav.Link className={styles.nav_link} href="/schedule">Schedule</Nav.Link>
-          <Nav.Link className={styles.nav_link} href="/events">Events</Nav.Link>
-          <Nav.Link className={styles.nav_link} href="/sponsors">Sponsors</Nav.Link>
-          <Nav.Link className={styles.nav_link} href="/team">Team</Nav.Link>
+          <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="schedule">Schedule</Link></Nav.Link>
+          <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="events">Events</Link></Nav.Link>
+          <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="sponsors">Sponsors</Link></Nav.Link>
+          <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="team">Team</Link></Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>
