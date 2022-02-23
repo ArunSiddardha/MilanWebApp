@@ -47,7 +47,7 @@ function Scores() {
    }
        
     useEffect(()=>{
-        Axios.get('http://localhost:3001/data/culti').then((response)=>{
+        Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/culti').then((response)=>{
             setscores(response.data);
         })
     },[])

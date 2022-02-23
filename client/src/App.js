@@ -10,7 +10,7 @@ import Team from './pages/Team'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/milan'>
       <Header />
       <Routes>
         <Route path="/" element={<Home/>}/>
