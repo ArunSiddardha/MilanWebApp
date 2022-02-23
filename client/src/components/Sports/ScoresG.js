@@ -47,7 +47,7 @@ function Scores() {
    }
        
     useEffect(()=>{
-        Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/sportsg').then((response)=>{
+        Axios.get('https://gymkhana.iith.ac.in/milan/data/sportsg').then((response)=>{
             setscores(response.data);
         })
     },[])

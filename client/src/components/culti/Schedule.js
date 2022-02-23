@@ -57,7 +57,7 @@ function Schedule() {
         i+=1
    }
   useEffect(()=>{
-    Axios.get('https://gymkhana.iith.ac.in/milanbackend/schedule/culti').then((response)=>{
+    Axios.get('https://gymkhana.iith.ac.in/milan/schedule/culti').then((response)=>{
         setscores(response.data);
     })
 },[])

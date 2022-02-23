@@ -57,7 +57,7 @@ function Schedule() {
         i+=1
    }
    useEffect(()=>{
-    Axios.get('https://gymkhana.iith.ac.in/milanbackend/schedule/techy').then((response)=>{
+    Axios.get('https://gymkhana.iith.ac.in/milan/schedule/techy').then((response)=>{
         setscores(response.data);
     })
 },[])
