@@ -82,7 +82,7 @@ function Events() {
         <Techy />
       </Tab>
       <Tab eventKey="SportsB" title="Sports Boys" tabClassName="profile-tabitem">
-        <div class="infogram-embed" data-id="24969d67-560e-482d-9284-4e8400d58742" data-type="interactive" data-title="Copy: Techy"></div>
+        <div class="infogram-embed" data-id="d35dc469-2eff-448b-828d-f25b504b2154" data-type="interactive" data-title="Sports Boys"></div>
         <SportsB />
       </Tab>
       <Tab eventKey="SportsG" title="Sports Girls" tabClassName="profile-tabitem">
