@@ -13,7 +13,7 @@ function Schedule() {
     const [scores,setscores] = useState([])
      
     const Heads = [
-        'Time', 'Event','Results'
+        'Time', 'Event', 'Venue', 'Results'
     ]
     const Dates = ['25/02','26/02','27/02','28/02','01/03','02/03','03/03','04/03','05/03','06/03']
     let index = Dates.indexOf(today)
@@ -42,6 +42,7 @@ function Schedule() {
                             <tr className='text-nowrap fs-lg-2'>
                                 <td>{obj.Time}</td>
                                 <td>{obj.Event}</td>
+                                <td>{obj.Venue}</td>
                                 <td>{obj.Results}</td>
                             </tr>
                         ))}
@@ -58,7 +59,7 @@ function Schedule() {
         i+=1
    }
    useEffect(()=>{
-    Axios.get('https://gymkhana.iith.ac.in/milan/schedule/sports').then((response)=>{
+    Axios.get('https://gymkhana.iith.ac.in/milanbackend/schedule/sports').then((response)=>{
         setscores(response.data);
         
     })

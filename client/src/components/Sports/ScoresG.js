@@ -7,7 +7,7 @@ function Scores() {
     const itemRows = [];
     const [scores,setscores] = useState([])
     const Heads = [
-        'Team', 'Points'
+        'Block', 'Points'
     ]
     for(var event in scores){
         i+=1
@@ -30,7 +30,7 @@ function Scores() {
                         
                         {objs.map((obj)=>(
                             <tr>
-                                <td>{obj.Team}</td>
+                                <td>{obj.Block}</td>
                                 <td>{obj.Points}</td>
                             </tr>
                         ))}
@@ -47,7 +47,7 @@ function Scores() {
    }
        
     useEffect(()=>{
-        Axios.get('https://gymkhana.iith.ac.in/milan/data/sportsg').then((response)=>{
+        Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/sportsg').then((response)=>{
             setscores(response.data);
         })
     },[])

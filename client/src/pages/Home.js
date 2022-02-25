@@ -4,14 +4,29 @@ import styles from '../css/Home.module.css'
 import gsap from 'gsap'
 const data = [
   {
-    image: require('../images/milanfina.png'),
+    image: require('../images/8.jpeg'),
   },
   {
-    image: require('../images/milanfina.png'),
+    image: require('../images/6.jpeg'),
   },
   {
-    image: require('../images/milanfina.png'),
-  }
+    image: require('../images/7.jpeg'),
+  },
+  {
+    image: require('../images/5.jpeg'),
+  },
+{
+    image: require('../images/4.jpeg'),
+  },
+{
+    image: require('../images/3.jpeg'),
+  },
+{
+    image: require('../images/2.jpeg'),
+  },
+{
+    image: require('../images/1.jpeg'),
+  },
 ]
 
 

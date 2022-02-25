@@ -14,7 +14,8 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" className={styles.nav_color} variant="dark">
       <Container fluid className={`${styles.padding} ${styles.fontstyle}`}>
-      <Navbar.Brand className='d-flex align-items-center'  href="/">
+      <Navbar.Brand className='d-flex align-items-center'>
+    <Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="/">
         <img 
           src={logo} 
           width="100px" 
@@ -22,6 +23,7 @@ function Header() {
           alt="logo"
         />
         <p className={styles.nav_brand}>MILAN</p>
+    </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
@@ -30,6 +32,7 @@ function Header() {
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="events">Events</Link></Nav.Link>
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="sponsors">Sponsors</Link></Nav.Link>
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="team">Team</Link></Nav.Link>
+          <Nav.Link className={styles.nav_link} href="https://flipbookpdf.net/web/site/13a67f48a459d6cdd7a43078620684d1429addcb202202.pdf.html">Rulebook</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>

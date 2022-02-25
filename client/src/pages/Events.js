@@ -8,16 +8,30 @@ import Techy from '../components/techy/Scores'
 import styles from '../css/Events.module.css'
 const data = [
   {
-   image: require('../images/milanfina.png'), 
+    image: require('../images/8.jpeg'),
   },
   {
-    image:require('../images/milanfina.png'), 
-   },
-   {
-    image:require('../images/milanfina.png'), 
-   } 
+    image: require('../images/6.jpeg'),
+  },
+  {
+    image: require('../images/7.jpeg'),
+  },
+  {
+    image: require('../images/5.jpeg'),
+  },
+{
+    image: require('../images/4.jpeg'),
+  },
+{
+    image: require('../images/3.jpeg'),
+  },
+{
+    image: require('../images/2.jpeg'),
+  },
+{
+    image: require('../images/1.jpeg'),
+  },
 ]
-
 function Events() {
   const [index, setIndex] = useState(0);
   const [key, setKey] = useState('culti');

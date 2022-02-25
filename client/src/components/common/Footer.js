@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../images/milan_logo.png'
+import logo from '../../images/milan_footer.png'
 import styles from '../../css/Footer.module.css'
 import { Container } from 'react-bootstrap'
 // import { SocialMediaIconsReact } from 'social-media-icons-react';

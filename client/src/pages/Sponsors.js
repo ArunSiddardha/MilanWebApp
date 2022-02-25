@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../images/milanfinal.png'
+import sachdev from '../images/sachdev.jpg'
 function Sponsors() {
    
   return (
@@ -8,30 +8,30 @@ function Sponsors() {
             <div className="profile-card">
                 <div className="profile-content">
                     <div className="profile-image">
-                      <img src={image} alt="first user"></img> 
+                      <img src={sachdev} alt="first user"></img> 
                     </div>
                     <div className="cdetail">
-                        Title Sponsor
+                        Utility Sponsor
                     </div> 
                 </div>
             </div>
             <div className="profile-card">
                 <div className="profile-content">
                     <div className="profile-image">
-                      <img src={image} alt="first user"></img> 
+                      <img src={sachdev} alt="first user"></img> 
                     </div>
                     <div className="cdetail">
-                        Title Sponsor
+                        Trusted Sponsor
                     </div> 
                 </div>
             </div>
             <div className="profile-card">
                 <div className="profile-content">
                     <div className="profile-image">
-                      <img src={image} alt="first user"></img> 
+                      <img src={sachdev} alt="first user"></img> 
                     </div>
                     <div className="cdetail">
-                        Title Sponsor
+                        Trusted Sponsor
                     </div> 
                 </div>
             </div>
