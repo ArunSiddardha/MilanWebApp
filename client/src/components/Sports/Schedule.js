@@ -26,7 +26,7 @@ function Schedule() {
         <Accordion.Item eventKey={i.toString()}>
             <Accordion.Header>{Datey}</Accordion.Header>
             <Accordion.Body>
-                <Table responsive="md" striped bordered hover>
+                <Table responsive="xl" striped bordered hover>
                     <thead>
                         <tr>
                             {Heads.map((Head) =>
