@@ -32,7 +32,7 @@ function Header() {
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="events">Events</Link></Nav.Link>
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="sponsors">Sponsors</Link></Nav.Link>
           <Nav.Link className={styles.nav_link} ><Link style={{textDecoration: 'none', color: '#DDDDDD'}} to="team">Team</Link></Nav.Link>
-          <Nav.Link className={styles.nav_link} href="https://flipbookpdf.net/web/site/13a67f48a459d6cdd7a43078620684d1429addcb202202.pdf.html">Rulebook</Nav.Link>
+          <Nav.Link className={styles.nav_link} href="https://heyzine.com/flip-book/d540bc9897.html">Rulebook</Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>
