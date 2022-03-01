@@ -4,6 +4,14 @@ import styles from '../css/Home.module.css'
 import gsap from 'gsap'
 const data_second = [
   {
+    image: require('../images/pro.png')
+  },
+  {
+    image: require('../images/prom.png')
+  }
+]
+const data1 = [
+  {
     image: require('../images/8.jpeg'),
   },
   {
@@ -27,12 +35,6 @@ const data_second = [
 {
     image: require('../images/1.jpeg'),
   },
-]
-const data_first = [
-  {
-    image: require('../images/prom.png'),
-  }
-
 ]
 
 function Home() {
@@ -66,7 +68,7 @@ function Home() {
           </div>
           <div className={`Carousel mx-auto my-5 ${styles.width}`}  >
             <Carousel activeIndex={index1} onSelect={handleSelect1}>
-              {data_first.map((slide, i) => {
+              {data_second.map((slide, i) => {
                 return (
 
                   <Carousel.Item>
@@ -82,7 +84,6 @@ function Home() {
                   </Carousel.Item>
                 )
               })}
-
             </Carousel>
           </div>
   
@@ -93,10 +94,9 @@ function Home() {
           </div>
         </div>
         <div className={` mx-auto my-5 ${styles.width}`}  >
-          <Carousel activeIndex={index2} onSelect={handleSelect2}>
-            {data_second.map((slide, i) => {
+          <Carousel activeIndex={index2} onSelect={handleSelect}>
+            {data1.map((slide, i) => {
               return (
-
                 <Carousel.Item>
                   <img
                     className="d-block w-100"
@@ -110,7 +110,6 @@ function Home() {
                 </Carousel.Item>
               )
             })}
-
           </Carousel>
         </div>
       </div>

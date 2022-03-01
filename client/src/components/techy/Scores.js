@@ -48,8 +48,15 @@ function Scores() {
        
     useEffect(()=>{
         Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/techy').then((response)=>{
-            setscores(response.data);
-        })
+                setscores(response.data);
+            })
+        setInterval(()=>{
+            Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/techy').then((response)=>{
+                setscores(response.data);
+            })
+            console.log(scores);
+        },5000)
+       
         console.log(scores);
     },[])
    
