@@ -4,6 +4,14 @@ import styles from '../css/Home.module.css'
 import gsap from 'gsap'
 const data = [
   {
+    image: require('../images/pro.png')
+  },
+  {
+    image: require('../images/prom.png')
+  }
+]
+const data1 = [
+  {
     image: require('../images/8.jpeg'),
   },
   {
@@ -85,7 +93,7 @@ function Home() {
         </div>
         <div className={` mx-auto my-5 ${styles.width}`}  >
           <Carousel activeIndex={index} onSelect={handleSelect}>
-            {data.map((slide, i) => {
+            {data1.map((slide, i) => {
               return (
 
                 <Carousel.Item>

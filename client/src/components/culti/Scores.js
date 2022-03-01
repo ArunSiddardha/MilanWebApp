@@ -50,6 +50,12 @@ function Scores() {
         Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/culti').then((response)=>{
             setscores(response.data);
         })
+        setInterval(()=>{
+            Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/culti').then((response)=>{
+                setscores(response.data);
+            })
+        },5000)
+       
     },[])
    
     return (

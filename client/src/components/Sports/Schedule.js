@@ -62,6 +62,13 @@ function Schedule() {
         setscores(response.data);
         
     })
+       setInterval(()=>{
+        Axios.get('https://gymkhana.iith.ac.in/milanbackend/schedule/sports').then((response)=>{
+            setscores(response.data);
+            
+        })
+       },5000)
+   
 },[])
    
     return (
