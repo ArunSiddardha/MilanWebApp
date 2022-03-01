@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import styles from '../css/Home.module.css'
 import gsap from 'gsap'
-const data = [
+const data_second = [
   {
     image: require('../images/8.jpeg'),
   },
@@ -28,7 +28,12 @@ const data = [
     image: require('../images/1.jpeg'),
   },
 ]
+const data_first = [
+  {
+    image: require('../images/prom.png'),
+  }
 
+]
 
 function Home() {
   useEffect(()=>{
@@ -43,21 +48,25 @@ function Home() {
       opacity:0,
     })
   },[])
-  const [index, setIndex] = useState(0);
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
+  const [index1, setIndex1] = useState(0);
+  const [index2, setIndex2] = useState(0)
+  const handleSelect1 = (selectedIndex, e) => {
+    setIndex1(selectedIndex);
+  }
+  const handleSelect2 = (selectedIndex, e) => {
+    setIndex2(selectedIndex);
+  };;
   return (
     <>
 
       <div className="relative container ">
         
           <div className={`Desc top-50 text-center mx-auto ${styles.texting}`}>
-            <strong>"Milan"</strong> is the annual techno-cultural-sports General Championship of IIT Hyderabad. It consists of 16 Sports, 19 Cultural and 9 technical events conducted between all the hostel blocks. In this second edition of Milan, the sports, cultural, and technical events will start from 25th February and will conclude on 6th March
+            <strong>"Milan"</strong> is the annual techno-cultural-sports General Championship of IIT Hyderabad. It consists of 16 Sports, 19 Cultural and 9 technical events conducted between all the hostel blocks. In this second edition of Milan, presented by SBI YONO, the sports, cultural, and technical events will start from 25th February and will conclude on 6th March
           </div>
           <div className={`Carousel mx-auto my-5 ${styles.width}`}  >
-            <Carousel activeIndex={index} onSelect={handleSelect}>
-              {data.map((slide, i) => {
+            <Carousel activeIndex={index1} onSelect={handleSelect1}>
+              {data_first.map((slide, i) => {
                 return (
 
                   <Carousel.Item>
@@ -84,8 +93,8 @@ function Home() {
           </div>
         </div>
         <div className={` mx-auto my-5 ${styles.width}`}  >
-          <Carousel activeIndex={index} onSelect={handleSelect}>
-            {data.map((slide, i) => {
+          <Carousel activeIndex={index2} onSelect={handleSelect2}>
+            {data_second.map((slide, i) => {
               return (
 
                 <Carousel.Item>
