@@ -94,7 +94,7 @@ function Home() {
           </div>
         </div>
         <div className={` mx-auto my-5 ${styles.width}`}  >
-          <Carousel activeIndex={index2} onSelect={handleSelect}>
+          <Carousel activeIndex={index2} onSelect={handleSelect2}>
             {data1.map((slide, i) => {
               return (
                 <Carousel.Item>
