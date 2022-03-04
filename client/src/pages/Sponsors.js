@@ -4,7 +4,8 @@ import sbi from '../images/sbi.jpg'
 import gouras from '../images/gouras.png'
 import skpl from '../images/skpl.png'
 import alumni from '../images/alumni.png'
-import alumni1 from '../images/alumni.png'
+import alumni1 from '../images/Tihan.jpeg'
+
 function Sponsors() {
    
   return (

@@ -8,6 +8,12 @@ const data_second = [
   },
   {
     image: require('../images/prom.png')
+  },
+  {
+    image: require('../images/threeofusandher.png')
+  },
+  {
+    image : require('../images/C6_Poster.png')
   }
 ]
 const data1 = [
