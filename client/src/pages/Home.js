@@ -7,9 +7,15 @@ const data_second = [
     image: require("../images/pro.png"),
   },
   {
-    image: require("../images/prom.png"),
+    image: require('../images/prom.png')
   },
-];
+  {
+    image: require('../images/threeofusandher.png')
+  },
+  {
+    image : require('../images/C6_Poster.png')
+  }
+]
 const data1 = [
   {
     image: require("../images/8.jpeg"),
@@ -100,7 +106,7 @@ function Home() {
             ></div>
           </div>
         </div>
-        <div className={` mx-auto my-5 ${styles.width}`}>
+        <div className={` mx-auto my-5 ${styles.width}`}  >
           <Carousel activeIndex={index2} onSelect={handleSelect2}>
             {data1.map((slide, i) => {
               return (

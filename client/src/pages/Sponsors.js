@@ -4,6 +4,8 @@ import sbi from '../images/sbi.jpg'
 import gouras from '../images/gouras.png'
 import skpl from '../images/skpl.png'
 import alumni from '../images/alumni.png'
+import alumni1 from '../images/Tihan.jpeg'
+
 function Sponsors() {
    
   return (
@@ -42,6 +44,16 @@ function Sponsors() {
             <div className="profile-card">
                 <div className="profile-content">
                     <div className="profile-image">
+                      <img src={alumni1} alt="first user"></img> 
+                    </div>
+                    <div className="cdetail">
+                        Technical Sponsor
+                    </div> 
+                </div>
+            </div>
+            <div className="profile-card">
+                <div className="profile-content">
+                    <div className="profile-image">
                       <img src={skpl} alt="first user"></img> 
                     </div>
                     <div className="cdetail">
@@ -59,6 +71,7 @@ function Sponsors() {
                     </div> 
                 </div>
             </div>
+            
 
     </div>
   )
