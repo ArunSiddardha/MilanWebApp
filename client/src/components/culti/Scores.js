@@ -47,6 +47,7 @@ function Scores() {
    }
        
     useEffect(()=>{
+      console.log("H")
         Axios.get('https://gymkhana.iith.ac.in/milanbackend/data/culti').then((response)=>{
             setscores(response.data);
         })
