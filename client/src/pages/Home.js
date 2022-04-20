@@ -18,29 +18,21 @@ const data_second = [
 ]
 const data1 = [
   {
-    image: require("../images/8.jpeg"),
+    image: require("../images/1.JPG"),
   },
   {
-    image: require("../images/6.jpeg"),
+    image: require("../images/2.JPG"),
   },
   {
-    image: require("../images/7.jpeg"),
+    image: require("../images/9.JPG"),
   },
   {
-    image: require("../images/5.jpeg"),
+    image: require("../images/10.JPG"),
   },
   {
-    image: require("../images/4.jpeg"),
+    image: require("../images/13.JPG"),
   },
-  {
-    image: require("../images/3.jpeg"),
-  },
-  {
-    image: require("../images/2.jpeg"),
-  },
-  {
-    image: require("../images/1.jpeg"),
-  },
+
 ];
 
 function Home() {
