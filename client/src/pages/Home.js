@@ -32,6 +32,21 @@ const data1 = [
   {
     image: require("../images/13.JPG"),
   },
+  {
+    image: require("../images/12.jpg"),
+  },
+  {
+    image: require("../images/11.jpg"),
+  },
+  {
+    image: require("../images/14.jpg"),
+  },
+  {
+    image: require("../images/15.jpg"),
+  },
+  {
+    image: require("../images/13.jpg"),
+  },
 
 ];
 
